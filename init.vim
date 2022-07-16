@@ -1,4 +1,5 @@
 " Basic Stuff
+syntax on
 set number relativenumber
 set mouse=v
 
@@ -9,6 +10,8 @@ set nocscopeverbose " suppress 'duplicate connection' error
 set shiftwidth=4 " indent is 4 spaces
 set tabstop=4    " tab width is 4 spaces
 set expandtab
+
+set formatoptions-=cro
 
 call plug#begin()
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
@@ -24,6 +27,7 @@ Plug 'https://github.com/hashivim/vim-terraform'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'voldikss/vim-floaterm'
 Plug 'lervag/vimtex'
+Plug 'preservim/nerdtree'
 
 " Tabs
 " Plug 'kyazdani42/nvim-web-devicons'
@@ -45,6 +49,8 @@ let g:doom_one_terminal_colors = v:true
 colorscheme doom-one
 
 set ignorecase
+set smartcase
+
 set cursorline
 
 " Make Ranger replace Netrw and be the file explorer
@@ -55,16 +61,19 @@ nnoremap <F9> :FloatermToggle<CR>
 nnoremap <F8> :terminal<CR>:set nonumber<CR>i<CR>
 
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <silent> <C-n> :TestNearest<CR>
-nmap <silent> <C-f> :TestFile<CR>
-nmap <silent> <C-s> :TestSuite<CR>
-nmap <silent> <C-l> :TestLast<CR>
-nmap <silent> <C-g> :TestVisit<CR>
+nmap <leader> <C-n> :TestNearest<CR>
+nmap <leader> <C-f> :TestFile<CR>
+nmap <leader> <C-s> :TestSuite<CR>
+nmap <leader> <C-l> :TestLast<CR>
+nmap <leader> <C-g> :TestVisit<CR>
 
 let test#strategy = "basic"
 
 " tabs
 nnoremap <C-t> :tabnew<CR>
+nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>w :tabclose<CR>
+
 " nnoremap <C-w> :tabclose<CR>
 " nnoremap <C-w> :q<CR>
 nnoremap <A-Left> :tabprevious<CR>
@@ -90,6 +99,13 @@ nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-j> <C-w>j<CR>
 
 nnoremap <C-p> :RnvimrToggle<CR>
+
+" Other keymaps
+nnoremap <leader>h :noh<CR>
+nnoremap <leader>y "*y
+nnoremap <leader>p "*p
+
+nnoremap <leader>b :NERDTreeToggle<CR>
 
 " Tabs
 " hi TabLine      guifg=#E7C547 guibg=#14191F gui=none 
