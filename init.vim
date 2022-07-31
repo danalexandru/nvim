@@ -28,6 +28,8 @@ Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'voldikss/vim-floaterm'
 Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'dkarter/bullets.vim'
 
 " Tabs
 " Plug 'kyazdani42/nvim-web-devicons'
