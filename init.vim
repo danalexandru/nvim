@@ -14,22 +14,23 @@ set expandtab
 set formatoptions-=cro
 
 call plug#begin()
-Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-" Plug 'https://github.com/vim-airline/vim-airline' " Status bar
-" Plug 'https://github.com/vim-airline/vim-airline-themes' " Status bar themes
-Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/frazrepo/vim-rainbow'
-Plug 'https://github.com/nathanaelkane/vim-indent-guides'
-Plug 'https://github.com/vim-test/vim-test'
-Plug 'https://github.com/fatih/vim-go'
-Plug 'https://github.com/gko/vim-coloresque'
-Plug 'https://github.com/hashivim/vim-terraform'
+Plug 'tpope/vim-surround' " Surrounding ysw)
+" Plug 'vim-airline/vim-airline' " Status bar
+" Plug 'vim-airline/vim-airline-themes' " Status bar themes
+Plug 'preservim/tagbar' " Tagbar for code navigation
+Plug 'frazrepo/vim-rainbow'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vim-test/vim-test'
+Plug 'fatih/vim-go'
+Plug 'gko/vim-coloresque'
+Plug 'hashivim/vim-terraform'
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'voldikss/vim-floaterm'
 Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'dkarter/bullets.vim'
+Plug 'Yggdroot/indentLine'
 
 " Tabs
 " Plug 'kyazdani42/nvim-web-devicons'
@@ -40,9 +41,10 @@ Plug 'dkarter/bullets.vim'
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-set encoding=UTF-8
-
 call plug#end()
+
+set encoding=UTF-8
+set list lcs=tab:\|\ 
 
 " set termguicolors     " enable true colors support
 set termguicolors
@@ -130,4 +132,6 @@ hi! TabLine ctermbg=NONE guibg=NONE
 
 set completeopt-=preview " For No Previews
 let g:rainbow_active = 1
+" let g:airline_theme="onedark"
+" let g:airline_powerline_fonts = 1
 
