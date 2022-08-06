@@ -24,13 +24,16 @@ Plug 'vim-test/vim-test'
 Plug 'fatih/vim-go'
 Plug 'gko/vim-coloresque'
 Plug 'hashivim/vim-terraform'
-Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+" Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'voldikss/vim-floaterm'
 Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'dkarter/bullets.vim'
 Plug 'Yggdroot/indentLine'
+
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 
 " Tabs
 " Plug 'kyazdani42/nvim-web-devicons'
@@ -102,7 +105,8 @@ nnoremap <C-l> <C-w>l<CR>
 nnoremap <C-k> <C-w>k<CR>
 nnoremap <C-j> <C-w>j<CR>
 
-nnoremap <C-p> :RnvimrToggle<CR>
+" nnoremap <C-p> :RnvimrToggle<CR>
+nnoremap <C-p> :Ranger<CR>
 
 " Other keymaps
 nnoremap <leader>h :noh<CR>
