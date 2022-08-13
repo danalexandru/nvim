@@ -30,10 +30,11 @@ Plug 'lervag/vimtex'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'dkarter/bullets.vim'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'zivyangll/git-blame.vim'
 
 " Tabs
 " Plug 'kyazdani42/nvim-web-devicons'
@@ -47,7 +48,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 call plug#end()
 
 set encoding=UTF-8
-set list lcs=tab:\|\ 
+" set list lcs=tab:\|\ 
 
 " set termguicolors     " enable true colors support
 set termguicolors
@@ -62,6 +63,11 @@ set cursorline
 
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1
+" let g:airline_theme="onedark"
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
+" let g:airline_powerline_fonts = 1
+
 tnoremap <Esc> <C-\><C-n><CR>
 
 nnoremap <F9> :FloatermToggle<CR>
@@ -114,6 +120,8 @@ nnoremap <leader>y "*y
 nnoremap <leader>p "*p
 
 nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <leader>i :IndentGuidesToggle<CR>
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 " Tabs
 " hi TabLine      guifg=#E7C547 guibg=#14191F gui=none 
@@ -135,7 +143,5 @@ hi! TabLine ctermbg=NONE guibg=NONE
 " hi! TabLineFill ctermbg=NONE guibg=NONE
 
 set completeopt-=preview " For No Previews
-let g:rainbow_active = 1
-" let g:airline_theme="onedark"
-" let g:airline_powerline_fonts = 1
 
+let g:rainbow_active = 1
