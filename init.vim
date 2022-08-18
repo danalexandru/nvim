@@ -15,8 +15,8 @@ set formatoptions-=cro
 
 call plug#begin()
 Plug 'tpope/vim-surround' " Surrounding ysw)
-" Plug 'vim-airline/vim-airline' " Status bar
-" Plug 'vim-airline/vim-airline-themes' " Status bar themes
+Plug 'vim-airline/vim-airline' " Status bar
+Plug 'vim-airline/vim-airline-themes' " Status bar themes
 Plug 'preservim/tagbar' " Tagbar for code navigation
 Plug 'frazrepo/vim-rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -63,10 +63,17 @@ set cursorline
 
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1
-" let g:airline_theme="onedark"
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#formatter = 'unique_tail'
-" let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_theme="onedark"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_powerline_fonts = 1
 
 tnoremap <Esc> <C-\><C-n><CR>
 
@@ -85,7 +92,8 @@ let test#strategy = "basic"
 " tabs
 nnoremap <C-t> :tabnew<CR>
 nnoremap <leader>t :tabnew<CR>
-nnoremap <leader>w :tabclose<CR>
+" nnoremap <leader>w :tabclose<CR>
+nnoremap <leader>w :bd<CR>
 
 " nnoremap <C-w> :tabclose<CR>
 " nnoremap <C-w> :q<CR>
@@ -122,6 +130,8 @@ nnoremap <leader>p "*p
 nnoremap <leader>b :NERDTreeToggle<CR>
 nnoremap <leader>i :IndentGuidesToggle<CR>
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+nnoremap q :q<CR>
+nnoremap <leader>q :qa<CR>
 
 " Tabs
 " hi TabLine      guifg=#E7C547 guibg=#14191F gui=none 
