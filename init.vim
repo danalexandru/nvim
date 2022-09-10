@@ -39,6 +39,7 @@ Plug 'f-person/git-blame.nvim'
 " use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'jkramer/vim-checkbox'
 
 call plug#end()
 
@@ -69,7 +70,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " let g:airline_symbols.linenr = ''
 let g:airline_symbols.linenr = ' ln '
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0 
 
 tnoremap <Esc> <C-\><C-n><CR>
 
@@ -153,4 +154,6 @@ set completeopt-=preview " For No Previews
 
 let g:rainbow_active = 1
 let g:gitblame_enabled = 0
+
+map <C-w><space> :call checkbox#ToggleCB()<cr>
 
