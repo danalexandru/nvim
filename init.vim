@@ -50,7 +50,7 @@ set encoding=UTF-8
 set termguicolors
 " let ayucolor="dark"   " for dark version of theme
 let g:doom_one_terminal_colors = v:true
-colorscheme doom-one
+colorscheme matcha-one
 
 set ignorecase
 set smartcase
