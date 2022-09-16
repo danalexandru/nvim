@@ -50,7 +50,7 @@ set encoding=UTF-8
 set termguicolors
 " let ayucolor="dark"   " for dark version of theme
 let g:doom_one_terminal_colors = v:true
-colorscheme matcha-one
+colorscheme gruvbox
 
 set ignorecase
 set smartcase
@@ -64,7 +64,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-let g:airline_theme="onedark"
+let g:airline_theme="base16_gruvbox_dark_hard"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " let g:airline_symbols.linenr = ''
