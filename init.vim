@@ -43,6 +43,7 @@ Plug 'jkramer/vim-checkbox'
 
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -70,6 +71,7 @@ endif
 
 " let g:airline_theme="base16_gruvbox_dark_hard"
 let g:airline_theme="onedark"
+" let g:airline_theme="ayu_dark"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " let g:airline_symbols.linenr = ''
@@ -118,8 +120,11 @@ nnoremap <C-_> <C-w>s<C-w>j<CR>
 
 nnoremap <C-h> <C-w>h<CR>
 nnoremap <C-l> <C-w>l<CR>
-nnoremap <C-k> <C-w>k<CR>
-nnoremap <C-j> <C-w>j<CR>
+" nnoremap <C-k> <C-w>k<CR>
+" nnoremap <C-j> <C-w>j<CR>
+
+noremap <C-j> j<C-e>
+noremap <C-k> k<C-y>
 
 " nnoremap <C-p> :RnvimrToggle<CR>
 nnoremap <C-p> :Ranger<CR>
@@ -134,7 +139,7 @@ nnoremap <leader>i :IndentGuidesToggle<CR>
 " nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>s :GitBlameToggle<CR>
 nnoremap q :q<CR>
-nnoremap <leader>q :qa<CR>
+" nnoremap <leader>q :qa<CR>
 
 " Tabs
 " hi TabLine      guifg=#E7C547 guibg=#14191F gui=none 
@@ -162,4 +167,3 @@ let g:gitblame_enabled = 0
 let g:vim_markdown_folding_disabled = 1
 
 map <C-w><space> :call checkbox#ToggleCB()<cr>
-
