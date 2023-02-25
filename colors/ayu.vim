@@ -33,7 +33,10 @@ let s:palette.accent    = {'dark': "#F29718",  'light': "#FF6A00",  'mirage': "#
 " let s:palette.panel     = {'dark': "#14191F",  'light': "#FFFFFF",  'mirage': "#272D38"}
 let s:palette.panel     = {'dark': "#0A0B11",  'light': "#FFFFFF",  'mirage': "#272D38"}
 let s:palette.guide     = {'dark': "#E7C547",  'light': "#D9D8D7",  'mirage': "#3D4751"}
-let s:palette.line      = {'dark': "#3E4B59",  'light': "#F3F3F3",  'mirage': "#242B38"}
+" let s:palette.line      = {'dark': "#3E4B59",  'light': "#F3F3F3",  'mirage': "#242B38"}
+" let s:palette.line      = {'dark': "#212733",  'light': "#F3F3F3",  'mirage': "#242B38"}
+let s:palette.line      = {'dark': "#1c1e29",  'light': "#F3F3F3",  'mirage': "#242B38"}
+" let s:palette.selection = {'dark': "#212733",  'light': "#F0EEE4",  'mirage': "#343F4C"}
 let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#343F4C"}
 let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#D9D7CE"}
 let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#828C99",  'mirage': "#607080"}
@@ -275,6 +278,8 @@ hi! link diffAdded String
 
 "}}}
 "
+" exe "hi! Highlight"       .s:fg_fg  .s:bg_panel   .s:fmt_none
+" exe "hi! HighlightSubtle" .s:fg_fg  .s:bg_panel   .s:fmt_none
 " This is needed for some reason: {{{
 
 let &background = s:style

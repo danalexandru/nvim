@@ -43,6 +43,8 @@ Plug 'jkramer/vim-checkbox'
 
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
+Plug 'tpope/vim-fugitive'
+
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
@@ -52,10 +54,11 @@ set encoding=UTF-8
 
 " set termguicolors     " enable true colors support
 set termguicolors
-" let ayucolor="dark"   " for dark version of theme
+let ayucolor="dark"   " for dark version of theme
 let g:doom_one_terminal_colors = v:true
 " colorscheme gruvbox
-colorscheme doom-one 
+" colorscheme doom-one
+colorscheme ayu
 
 set ignorecase
 set smartcase
@@ -70,14 +73,15 @@ if !exists('g:airline_symbols')
 endif
 
 " let g:airline_theme="base16_gruvbox_dark_hard"
-let g:airline_theme="onedark"
-" let g:airline_theme="ayu_dark"
+" let g:airline_theme="onedark"
+let g:airline_theme="ayu_dark"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " let g:airline_symbols.linenr = ''
 let g:airline_symbols.linenr = ' ln '
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 0 
+let g:airline#extensions#branch#enabled=0
 
 tnoremap <Esc> <C-\><C-n><CR>
 
@@ -123,8 +127,8 @@ nnoremap <C-l> <C-w>l<CR>
 " nnoremap <C-k> <C-w>k<CR>
 " nnoremap <C-j> <C-w>j<CR>
 
-noremap <C-j> j<C-e>
-noremap <C-k> k<C-y>
+noremap <C-j> 3j3<C-e>
+noremap <C-k> 3k3<C-y>
 
 " nnoremap <C-p> :RnvimrToggle<CR>
 nnoremap <C-p> :Ranger<CR>
@@ -167,3 +171,6 @@ let g:gitblame_enabled = 0
 let g:vim_markdown_folding_disabled = 1
 
 map <C-w><space> :call checkbox#ToggleCB()<cr>
+
+" Custom Commands
+command CloseBuffers execute "%bd|e#|bd#"
