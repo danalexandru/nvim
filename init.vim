@@ -5,7 +5,7 @@ set mouse=v
 
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
-set nocscopeverbose " suppress 'duplicate connection' error
+" set nocscopeverbose " suppress 'duplicate connection' error
 
 set shiftwidth=4 " indent is 4 spaces
 set tabstop=4    " tab width is 4 spaces
@@ -60,6 +60,7 @@ let g:gruvbox_contrast_dark="hard"
 colorscheme gruvbox
 " colorscheme doom-one
 " colorscheme ayu
+" colorscheme dracula
 
 set ignorecase
 set smartcase
@@ -76,6 +77,7 @@ endif
 let g:airline_theme="base16_gruvbox_dark_hard"
 " let g:airline_theme="onedark"
 " let g:airline_theme="ayu_dark"
+" let g:airline_theme="base16_dracula"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " let g:airline_symbols.linenr = ''
@@ -175,3 +177,7 @@ map <C-w><space> :call checkbox#ToggleCB()<cr>
 
 " Custom Commands
 command CloseBuffers execute "%bd|e#|bd#"
+
+" Set syntax highlight for unrecognized file types
+autocmd BufRead,BufNewFile *.xmlx set filetype=xml
+autocmd BufRead,BufNewFile *.gohtml set filetype=html
