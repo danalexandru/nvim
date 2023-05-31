@@ -61,6 +61,7 @@ colorscheme gruvbox
 " colorscheme doom-one
 " colorscheme ayu
 " colorscheme dracula
+" colorscheme codedark
 
 set ignorecase
 set smartcase
@@ -78,6 +79,8 @@ let g:airline_theme="base16_gruvbox_dark_hard"
 " let g:airline_theme="onedark"
 " let g:airline_theme="ayu_dark"
 " let g:airline_theme="base16_dracula"
+" let g:airline_theme="base16_default"
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " let g:airline_symbols.linenr = ''
