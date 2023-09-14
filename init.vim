@@ -14,10 +14,8 @@ set expandtab
 set formatoptions-=cro
 
 call plug#begin()
-Plug 'tpope/vim-surround' " Surrounding ysw)
 Plug 'vim-airline/vim-airline' " Status bar
 Plug 'vim-airline/vim-airline-themes' " Status bar themes
-Plug 'preservim/tagbar' " Tagbar for code navigation
 Plug 'frazrepo/vim-rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-test/vim-test'
@@ -38,11 +36,10 @@ Plug 'f-person/git-blame.nvim'
 " If you don't have nodejs and yarn
 " use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'jkramer/vim-checkbox'
 
 Plug 'godlygeek/tabular'
-Plug 'preservim/vim-markdown'
 Plug 'tpope/vim-fugitive'
 
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -175,8 +172,6 @@ set completeopt-=preview " For No Previews
 let g:rainbow_active = 1
 let g:gitblame_enabled = 0
 let g:vim_markdown_folding_disabled = 1
-
-map <C-w><space> :call checkbox#ToggleCB()<cr>
 
 " Custom Commands
 command CloseBuffers execute "%bd|e#|bd#"
