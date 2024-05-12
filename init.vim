@@ -6,12 +6,12 @@ set mouse=v
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
 " set nocscopeverbose " suppress 'duplicate connection' error
-
 set shiftwidth=4 " indent is 4 spaces
 set tabstop=4    " tab width is 4 spaces
 set expandtab
 
 set formatoptions-=cro
+set scrolloff=8
 
 call plug#begin()
 Plug 'vim-airline/vim-airline' " Status bar
@@ -41,12 +41,14 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
+" Plug 'dhruvasagar/vim-table-mode'
 
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
 set encoding=UTF-8
+set foldlevel=99
 " set list lcs=tab:\|\ 
 
 " set termguicolors     " enable true colors support
@@ -65,6 +67,7 @@ set smartcase
 
 set cursorline
 
+let g:vimtex_log_verbose = 1
 " Make Ranger replace Netrw and be the file explorer
 " let g:rnvimr_enable_ex = 1
 
@@ -169,7 +172,9 @@ hi! TabLine ctermbg=NONE guibg=NONE
 
 set completeopt-=preview " For No Previews
 
-let g:rainbow_active = 1
+
+" let g:rainbow_active = 1
+au FileType c,cpp,objc,objcpp,go,cs,python,sh,json,java,js call rainbow#load()
 let g:gitblame_enabled = 0
 let g:vim_markdown_folding_disabled = 1
 
@@ -179,3 +184,5 @@ command CloseBuffers execute "%bd|e#|bd#"
 " Set syntax highlight for unrecognized file types
 autocmd BufRead,BufNewFile *.xmlx set filetype=xml
 autocmd BufRead,BufNewFile *.gohtml set filetype=html
+autocmd BufRead,BufNewFile dockerfile.* set filetype=dockerfile
+
