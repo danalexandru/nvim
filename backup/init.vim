@@ -17,30 +17,31 @@ call plug#begin()
 Plug 'vim-airline/vim-airline' " Status bar
 Plug 'vim-airline/vim-airline-themes' " Status bar themes
 Plug 'frazrepo/vim-rainbow'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vim-test/vim-test'
+" Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'vim-test/vim-test'
 Plug 'fatih/vim-go'
 Plug 'gko/vim-coloresque'
 Plug 'hashivim/vim-terraform'
 " Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 Plug 'lervag/vimtex'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'dkarter/bullets.vim'
-
+" 
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'f-person/git-blame.nvim'
-
+" 
 " If you don't have nodejs and yarn
 " use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 Plug 'preservim/vim-markdown'
+Plug 'rudes/vim-java'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-fugitive'
+" 
+" Plug 'godlygeek/tabular'
+" Plug 'tpope/vim-fugitive'
 " Plug 'dhruvasagar/vim-table-mode'
 
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -89,19 +90,19 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline_powerline_fonts = 0 
 let g:airline#extensions#branch#enabled=0
 
-tnoremap <Esc> <C-\><C-n><CR>
+" tnoremap <Esc> <C-\><C-n><CR>
 
-nnoremap <F9> :FloatermToggle<CR>
-nnoremap <F8> :terminal<CR>:set nonumber<CR>i<CR>
+" nnoremap <F9> :FloatermToggle<CR>
+" nnoremap <F8> :terminal<CR>:set nonumber<CR>i<CR>
 
-" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <leader> <C-n> :TestNearest<CR>
-nmap <leader> <C-f> :TestFile<CR>
-nmap <leader> <C-s> :TestSuite<CR>
-nmap <leader> <C-l> :TestLast<CR>
-nmap <leader> <C-g> :TestVisit<CR>
+" " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+" nmap <leader> <C-n> :TestNearest<CR>
+" nmap <leader> <C-f> :TestFile<CR>
+" nmap <leader> <C-s> :TestSuite<CR>
+" nmap <leader> <C-l> :TestLast<CR>
+" nmap <leader> <C-g> :TestVisit<CR>
 
-let test#strategy = "basic"
+" let test#strategy = "basic"
 
 " tabs
 nnoremap <C-t> :tabnew<CR>
@@ -144,8 +145,8 @@ nnoremap <leader>h :noh<CR>
 nnoremap <leader>y "*y
 nnoremap <leader>p "*p
 
-nnoremap <leader>b :NERDTreeToggle<CR>
-nnoremap <leader>i :IndentGuidesToggle<CR>
+" nnoremap <leader>b :NERDTreeToggle<CR>
+" nnoremap <leader>i :IndentGuidesToggle<CR>
 " nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>s :GitBlameToggle<CR>
 nnoremap q :q<CR>
@@ -177,6 +178,8 @@ set completeopt-=preview " For No Previews
 au FileType c,cpp,objc,objcpp,go,cs,python,sh,json,java,js call rainbow#load()
 let g:gitblame_enabled = 0
 let g:vim_markdown_folding_disabled = 1
+let g:loaded_python3_provider = 0
+let g:loaded_perl_provider = 0
 
 " Custom Commands
 command CloseBuffers execute "%bd|e#|bd#"
