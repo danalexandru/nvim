@@ -16,7 +16,13 @@ return {
             -- use transparent background
             transparent_bg = true, -- default false
             -- set italic comment
-            italic_comment = true, -- default false
+              italic = {
+                strings = false,
+                emphasis = false,
+                comments = false,
+                operators = false,
+                folds = false,
+                },
             -- overrides the default highlights with table see `:h synIDattr`             
         })
         -- Make sure to set the color scheme when neovim loads and configures the dracula plugin
