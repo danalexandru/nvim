@@ -10,11 +10,17 @@ vim.keymap.set("n", "<C-k>", "3k3<C-y>", { desc = "Scroll 3 lines down" })
 vim.keymap.set("n", "<leader>t", ":tabnew<cr>", { desc = "Create new tab" })
 vim.keymap.set("n", "<leader>w", ":bd<cr>", { desc = "Close current buffer" })
 
+-- Mac keybindings
 vim.keymap.set("n", "˙", ":tabprevious<cr>", { desc = "Go to previous tab" })
 vim.keymap.set("n", "¬", ":tabnext<cr>", { desc = "Go to next tab" })
 vim.keymap.set("n", "∆", ":tabm -1<cr>", { desc = "Move tab to the left" })
 vim.keymap.set("n", "˚", ":tabm +1<cr>", { desc = "Move tab to the right" })
 
+-- Linux keybindings
+vim.keymap.set("n", "<A-h>", ":tabprevious<cr>", { desc = "Go to previous tab" })
+vim.keymap.set("n", "<A-l>", ":tabnext<cr>", { desc = "Go to next tab" })
+vim.keymap.set("n", "<A-j>", ":tabm -1<cr>", { desc = "Move tab to the left" })
+vim.keymap.set("n", "<A-k>", ":tabm +1<cr>", { desc = "Move tab to the right" })
 
 -- Easily split windows
 vim.keymap.set("n", "<C-\\>", ":vsplit<cr>", { desc = "Window Split Vertical" })
