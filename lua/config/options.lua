@@ -47,16 +47,7 @@ vim.opt.foldmethod = "indent"
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 
--- Vim Airline theme
-vim.g["airline_theme"]="base16_gruvbox_dark_hard"
-vim.g["airline#extensions#tabline#enabled"] = 1
-vim.g["airline#extensions#tabline#formatter"] = "unique_tail"
-vim.g["airline_symbols.linenr"] = " ln "
-vim.g["airline#extensions#whitespace#enabled"] = 0
-vim.g["airline_powerline_fonts"] = 0
-vim.g["airline#extensions#branch#enabled"] = 0
 
-vim.g["rainbow_active"] = 1
-
+-- Other
 vim.g["vim_markdown_folding_disabled"] = 1
 vim.g["gitblame_enabled"] = 0

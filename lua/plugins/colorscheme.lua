@@ -1,4 +1,5 @@
 return {
+    {
     -- Shortened Github Url
     "ellisonleao/gruvbox.nvim",
     lazy = false,
@@ -28,4 +29,20 @@ return {
         -- Make sure to set the color scheme when neovim loads and configures the dracula plugin
         vim.cmd.colorscheme("gruvbox")
     end,
+    }, {"vim-airline/vim-airline"},
+    {
+        "vim-airline/vim-airline-themes",
+        dependencies = {
+            "vim-airline/vim-airline"
+        },
+        config = function()
+            vim.g["airline_theme"]="base16_gruvbox_dark_hard"
+            vim.g["airline#extensions#tabline#enabled"] = 1
+            vim.g["airline#extensions#tabline#formatter"] = "unique_tail"
+            vim.g["airline_symbols.linenr"] = " ln "
+            vim.g["airline#extensions#whitespace#enabled"] = 0
+            vim.g["airline_powerline_fonts"] = 0
+            vim.g["airline#extensions#branch#enabled"] = 0
+        end
+    },
 }

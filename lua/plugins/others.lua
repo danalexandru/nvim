@@ -1,9 +1,12 @@
 return {
     -- Shortened Github Url
-    {"vim-airline/vim-airline"},
-    {"vim-airline/vim-airline-themes"},
     {"tpope/vim-commentary"},
-    {"HiPhish/rainbow-delimiters.nvim"},
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+        config = function()
+            vim.g["rainbow_active"] = 1
+        end
+    },
     {"fatih/vim-go"},
     {"preservim/vim-markdown"},
     {
