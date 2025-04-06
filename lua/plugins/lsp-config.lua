@@ -55,6 +55,15 @@ return {
               },
             })
 
+            vim.diagnostic.config({
+              virtual_text = true, -- this turns on inline messages
+              signs = true,        -- keeps the signs in the gutter
+              underline = true,    -- underlines the problematic code
+              update_in_insert = false, -- don't update diagnostics while you're typing
+              severity_sort = true,
+            })
+
+
             -- keybindings
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Get Hover description" })
             vim.keymap.set('n', 'J', vim.diagnostic.open_float, { noremap = true, silent = true })
