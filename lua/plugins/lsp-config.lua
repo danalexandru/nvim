@@ -55,6 +55,7 @@ return {
               },
             })
 
+            -- show diagnostic messages at all time (default: false)
             vim.diagnostic.config({
               virtual_text = true, -- this turns on inline messages
               signs = true,        -- keeps the signs in the gutter
@@ -62,7 +63,6 @@ return {
               update_in_insert = false, -- don't update diagnostics while you're typing
               severity_sort = true,
             })
-
 
             -- keybindings
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Get Hover description" })
