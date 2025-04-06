@@ -28,4 +28,5 @@ vim.keymap.set("n", "<C-_>", ":split<cr>", { desc = "Window Split Horizontal" })
 
 -- Exit out of vim easier
 vim.keymap.set("n", "q", ":q<cr>", { desc = "Exit out of vim with one keypress" })
+vim.keymap.set("n", "<leader>q", ":qa<cr>", { desc = "Exit out of vim with one keypress" })
 
