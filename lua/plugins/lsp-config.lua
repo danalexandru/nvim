@@ -57,6 +57,7 @@ return {
 
             -- keybindings
             vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Get Hover description" })
+            vim.keymap.set('n', 'J', vim.diagnostic.open_float, { noremap = true, silent = true })
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = "Go to declaration" })
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to definition" })
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Get code actions" })
