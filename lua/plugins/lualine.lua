@@ -2,6 +2,8 @@ return {
     {"nvim-tree/nvim-web-devicons"},
     {
         'nvim-lualine/lualine.nvim',
+        lazy = false,
+        priority = 1000,
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function()
             local custom_gruvbox = require'lualine.themes.gruvbox'
@@ -25,10 +27,28 @@ return {
             options = {
               theme = custom_gruvbox,
               section_separators = { left = '', right = '' },
-              component_separators = { left = ')', right = '(' },
+              component_separators = '',
+              -- component_separators = { left = ')', right = '(' },
               -- section_separators = { left = '', right = '' },
               -- component_separators = { left = '', right = '' },
             },
+            sections = {
+                lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+                lualine_b = {'branch', 'diff', 'diagnostics'},
+                lualine_c = {
+                    -- 'filename',
+                     {
+                      'filename',
+                      file_status = true, -- displays file status (readonly status, modified status)
+                      path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
+                    }
+                },
+                lualine_x = {'encoding', 'fileformat', 'filetype'},
+                lualine_y = {'progress'},
+                lualine_z = {
+                  { 'location', separator = { right = '' }, left_padding = 2 },
+                },
+              },
             -- Additional customization can be done here
           }
         end

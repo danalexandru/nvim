@@ -70,6 +70,7 @@ return {
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = "Go to declaration" })
             vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to definition" })
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "Get code actions" })
+            vim.keymap.set('n', '<leader>r', ':LspRestart<CR>', { desc = "Restart LSP" })
         end
     }
 }
