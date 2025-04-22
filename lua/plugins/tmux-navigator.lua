@@ -14,5 +14,8 @@ return {
     -- vim.keymap.set("n", "<C-l>", "<cmd><C-U>TmuxNavigatorRight<CR>", { desc = "Move focus to the right window" })
     vim.keymap.set("n", "<C-j>", "3j3<C-e>", { desc = "Scroll 3 lines down" })
     vim.keymap.set("n", "<C-k>", "3k3<C-y>", { desc = "Scroll 3 lines down" })
+
+    vim.keymap.set("n", "<C-\\>", ":vsplit<cr>", { desc = "Window Split Vertical" })
+    vim.keymap.set("n", "<C-_>", ":split<cr>", { desc = "Window Split Horizontal" })
   end
 }
