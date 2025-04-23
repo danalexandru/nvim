@@ -30,3 +30,14 @@ vim.keymap.set("n", "<C-_>", ":split<cr>", { desc = "Window Split Horizontal" })
 vim.keymap.set("n", "q", ":q<cr>", { desc = "Exit out of vim with one keypress" })
 vim.keymap.set("n", "<leader>q", ":qa<cr>", { desc = "Exit out of vim with one keypress" })
 
+-- Reload neovim configuration
+vim.api.nvim_create_user_command('ReloadConfig', function()
+  for name, _ in pairs(package.loaded) do
+    if name:match('^user') or name:match('^plugins') then
+      package.loaded[name] = nil
+    end
+  end
+  dofile(vim.env.MYVIMRC)
+  vim.notify("Configuration reloaded!", vim.log.levels.INFO)
+end, {})
+vim.api.nvim_set_keymap('n', '<leader>R', ':ReloadConfig<CR>', { noremap = true, silent = true })
