@@ -1,14 +1,23 @@
 return {
     {
-        "williamboman/mason.nvim",
+        -- "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         config = function()
             require("mason").setup()
         end
     }, {
-         "williamboman/mason-lspconfig.nvim",
+         -- "williamboman/mason-lspconfig.nvim",
+         "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
          config = function()
              require("mason-lspconfig").setup({
+                automatic_enable = false,
                 ensure_installed = { "lua_ls", "rust_analyzer", "gopls", "golangci_lint_ls", "pylsp" },
+                -- ensure_installed = { "lua_ls", "rust_analyzer", "gopls", "golangci_lint_ls", "pylsp" },
              })
          end
     }, --[[{
@@ -54,6 +63,7 @@ return {
                 ['rust-analyzer'] = {},
               },
             })
+            -- lspconfig.yamlls.setup({})
 
             -- show diagnostic messages at all time (default: false)
             vim.diagnostic.config({
