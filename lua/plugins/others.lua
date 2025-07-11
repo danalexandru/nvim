@@ -28,7 +28,7 @@ return {
     {"gko/vim-coloresque"},
     {
         "f-person/git-blame.nvim",
-        vim.keymap.set("n", "<leader>s", ":GitBlameToggle<cr>", { desc = "Toggle Git blame" }),
+        vim.keymap.set("n", "<leader><space>s", ":GitBlameToggle<cr>", { desc = "Toggle Git blame" }),
     },
     {"lervag/vimtex"},
     {"dkarter/bullets.vim"},
