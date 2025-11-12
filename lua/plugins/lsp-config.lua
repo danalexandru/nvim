@@ -49,19 +49,33 @@ return {
             -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
             -- config
-            local lspconfig = require('lspconfig')
-            lspconfig.lua_ls.setup({})
-            lspconfig.pylsp.setup({})
+            -- local lspconfig = require('lspconfig')
+            -- lspconfig.lua_ls.setup({})
+            vim.lsp.config('pylsp', {
+              settings = {
+                pylsp = {
+                  plugins = {
+                    pycodestyle = {
+                      ignore = {'W391'},
+                      maxLineLength = 100
+                    }
+                  }
+                }
+              }
+            })
             -- lspconfig.pyright.setup({
             -- --     -- capabilities = capabilities,
             -- })
-            lspconfig.gopls.setup({})
-            lspconfig.golangci_lint_ls.setup({})
-            lspconfig.rust_analyzer.setup({
-              -- Server-specific settings. See `:help lspconfig-setup`
+            vim.lsp.enable('gopls')
+            vim.lsp.enable('golangci_lint_ls')
+            vim.lsp.config('rust_analyzer', {
               settings = {
-                ['rust-analyzer'] = {},
-              },
+                ['rust-analyzer'] = {
+                  diagnostics = {
+                    enable = false;
+                  }
+                }
+              }
             })
             -- lspconfig.yamlls.setup({})
 
