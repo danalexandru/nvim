@@ -1,12 +1,12 @@
 return {
     -- Shortened Github Url
     {"tpope/vim-commentary"},
-    {
-        "HiPhish/rainbow-delimiters.nvim",
-        config = function()
-            vim.g["rainbow_active"] = 1
-        end
-    },
+    -- {
+    --     "HiPhish/rainbow-delimiters.nvim",
+    --     config = function()
+    --         vim.g["rainbow_active"] = 1
+    --     end
+    -- },
     {"fatih/vim-go"},
     -- {"preservim/vim-markdown"},
     {
